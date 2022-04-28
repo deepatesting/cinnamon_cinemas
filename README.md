@@ -4,6 +4,7 @@ Test Driven Development exercise for Mars Rover.
 
 ### Your Task
 **Setting the Scene**
+
 You have a special task from Cinnamon Cinemas to develop a program to allocate seats to customers purchasing tickets for a movie theatre.
 Cinnamon Cinemas provided some criteria for how the program should be built.
 
