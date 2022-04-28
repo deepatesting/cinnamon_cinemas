@@ -14,7 +14,7 @@ public class CinemaTest {
         String expectedResult = cinemaApp.allocateSeats();
 
         //Assert
-        Assertions.assertEquals("Allocated", expectedResult);
+        Assertions.assertEquals(" ", expectedResult);
     }
 
 }
