@@ -1,7 +1,7 @@
 package com.techreturners.cinnamon_cinemas;
 
 import org.junit.jupiter.api.*;
-import org.testng.annotations.BeforeTest;
+
 
 public class CinemaTest {
 
@@ -56,7 +56,7 @@ public class CinemaTest {
 
     @DisplayName("Check if SeatGrid Array Initialized to 0(Empty)")
     @Test
-    public void checkIfSeatGridArrayInitializedtoEmptyTest(){
+    public void checkIfSeatGridArrayInitializedToEmptyTest(){
         //Arrange
         String[][] expectedStringArr = {{"0", "0", "0", "0", "0"},
                                         {"0", "0", "0", "0", "0"},
@@ -66,5 +66,16 @@ public class CinemaTest {
         Assertions.assertArrayEquals(expectedStringArr,
                                         cinemaApp.initializeSeatsGrid(actualStringArr),
                                 "Assertion failed as the two array values didn’t match");
+    }
+
+    @DisplayName("Check if Cinema Theatre has open spaces")
+    @Test
+    public void checkIfCinemaHasOpenSeats(){
+        //Arrange
+        String[][] inputStrArr = {{"X", "X", "X", "X", "X"},
+                                        {"X", "X", "X", "X", "X"},
+                                        {"X", "X", "X","X", "X",}
+                                        };
+        Assertions.assertTrue(cinemaApp.hasOpenSeats(inputStrArr));
     }
 }
