@@ -26,7 +26,10 @@ public class Cinema {
         return seatsGrid;
     }
 
-    public String allocateSeats(){
-        return " ";
+    public String allocateSeats(int numSeats){
+        if((numSeats >= 1) && (numSeats <=3))
+            return "Allocated";
+        else
+            return " ";
     }
 }

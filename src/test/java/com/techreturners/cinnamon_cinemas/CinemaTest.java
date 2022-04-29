@@ -1,6 +1,7 @@
 package com.techreturners.cinnamon_cinemas;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 public class CinemaTest {
@@ -11,10 +12,10 @@ public class CinemaTest {
         Cinema cinemaApp = new Cinema(3,5);
 
         //Act
-        String expectedResult = cinemaApp.allocateSeats();
+        String result = cinemaApp.allocateSeats(0);
 
         //Assert
-        Assertions.assertEquals(" ", expectedResult);
+        Assertions.assertEquals(" ", result);
     }
 
     @Test
@@ -29,5 +30,19 @@ public class CinemaTest {
         //Assert
         Assertions.assertEquals(3, rows);
         Assertions.assertEquals(5, cols);
+    }
+
+    @Test
+    public void checkAllocateSeatFirstTest(){
+        //Arrange
+        Cinema cinemaApp = new Cinema(3,5);
+        int userInput = 2;
+
+        //Act
+        String result = cinemaApp.allocateSeats(userInput);
+
+        //Assert
+        Assertions.assertEquals("Allocated", result);
+
     }
 }
