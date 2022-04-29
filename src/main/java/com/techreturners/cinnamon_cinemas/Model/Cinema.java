@@ -1,15 +1,15 @@
-package com.techreturners.cinnamon_cinemas;
+package com.techreturners.cinnamon_cinemas.Model;
 
 public class Cinema {
 
     private int rows = 0;
     private int columns = 0;
     private final static String EMPTY_SEAT = "0";
-    private final static String[] ROWS = {"A", "B", "C"};
-    private final static String[] COLS = {"1", "2", "3", "4", "5"};
+    private final String[] ROWS = {"A", "B", "C"};
+    private final String[] COLS = {"1", "2", "3", "4", "5"};
     private String[][] seatsGrid;
 
-    Cinema(int rows, int columns){
+    public Cinema(int rows, int columns){
         this.rows = rows;
         this.columns = columns;
         this.seatsGrid = new String[rows][columns];
@@ -17,6 +17,14 @@ public class Cinema {
 
     public int getColumns() {
         return columns;
+    }
+
+    public String[] getROWS() {
+        return ROWS;
+    }
+
+    public String[] getCOLS() {
+        return COLS;
     }
 
     public int getRows() {
@@ -27,11 +35,15 @@ public class Cinema {
         return seatsGrid;
     }
 
+    public void setSeatsGrid(String[][] seatsGrid) {
+        this.seatsGrid = seatsGrid;
+    }
+
     public boolean hasOpenSeats(String[][] seatsGrid){
 
         for(int row = 0 ; row < seatsGrid.length; row++)
             for(int col = 0; col < seatsGrid[row].length; col++)
-                if(seatsGrid[row][col] == EMPTY_SEAT)
+                if(seatsGrid[row][col].equals(EMPTY_SEAT))
                     return true;
         return false;
     }
@@ -47,21 +59,20 @@ public class Cinema {
     public String allocateSeats(String[][] seatsGrid, int numSeats){
 
         if((numSeats >= 1) && (numSeats <=3)) {
-            seatsGrid = initializeSeatsGrid(seatsGrid);
             if(hasOpenSeats(seatsGrid)) {
-                while(numSeats > 0){
                     for(int row = 0 ; row < seatsGrid.length; row++)
                         for(int col = 0; col < seatsGrid[row].length; col++)
-                            if(seatsGrid[row][col] == "0")
+                            if(seatsGrid[row][col].equals("0") && (numSeats > 0)) {
                                 seatsGrid[row][col] = "X";
-                    numSeats--;
-                }
+                                numSeats--;
+                            }
+                    setSeatsGrid(seatsGrid);
                 return "Allocated";
             }
             else
-                return "Not enough space";
+                return "Not enough space left!";
         } else
-            return " ";
+            return "Not valid input request";
     }
 
 }
