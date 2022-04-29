@@ -1,55 +1,63 @@
 package com.techreturners.cinnamon_cinemas;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
+import org.testng.annotations.BeforeTest;
 
 public class CinemaTest {
 
+    Cinema cinemaApp;
+    String[][] actualStringArr;
+    String result;
+
+    @BeforeEach
+    public void testSetUp(){
+        cinemaApp = new Cinema(3,5);
+        actualStringArr = new String[3][5];
+    }
+
+    @DisplayName("Check for return empty string - first test")
     @Test
     public void checkEmptyStringReturnTest(){
-        //Arrange
-        Cinema cinemaApp = new Cinema(3,5);
-
         //Act
-        String result = cinemaApp.allocateSeats(0);
+        result = cinemaApp.allocateSeats(actualStringArr,0);
 
         //Assert
         Assertions.assertEquals(" ", result);
     }
 
+    @DisplayName("Check if rows and columns number right")
     @Test
     public void checkIfRowsAndColumnsRightTest(){
         //Arrange
-        Cinema cinemaApp = new Cinema(3,5);
+        int rows = 0;
+        int cols = 0;
 
         //Act
-        int rows = cinemaApp.getRows();
-        int cols = cinemaApp.getColumns();
+        rows = cinemaApp.getRows();
+        cols = cinemaApp.getColumns();
 
         //Assert
         Assertions.assertEquals(3, rows);
         Assertions.assertEquals(5, cols);
     }
 
+    @DisplayName("Check if success after allocation")
     @Test
-    public void checkAllocateSeatFirstTest(){
+    public void checkAllocateSeatTestSuccess(){
         //Arrange
-        Cinema cinemaApp = new Cinema(3,5);
         int userInput = 2;
 
         //Act
-        String result = cinemaApp.allocateSeats(userInput);
+        result = cinemaApp.allocateSeats(actualStringArr, userInput);
 
         //Assert
         Assertions.assertEquals("Allocated", result);
     }
 
+    @DisplayName("Check if SeatGrid Array Initialized to 0(Empty)")
     @Test
     public void checkIfSeatGridArrayInitializedtoEmptyTest(){
         //Arrange
-        Cinema cinemaApp = new Cinema(3,5);
-        String[][] actualStringArr = new String[3][5];
         String[][] expectedStringArr = {{"0", "0", "0", "0", "0"},
                                         {"0", "0", "0", "0", "0"},
                                         {"0", "0", "0", "0", "0"}

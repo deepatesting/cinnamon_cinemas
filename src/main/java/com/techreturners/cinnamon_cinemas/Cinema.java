@@ -45,7 +45,7 @@ public class Cinema {
         return seatsGrid;
     }
 
-    public String allocateSeats(int numSeats){
+    public String allocateSeats(String[][] seatGrid, int numSeats){
 
         if((numSeats >= 1) && (numSeats <=3)) {
             seatsGrid = initializeSeatsGrid(seatsGrid);
