@@ -43,6 +43,20 @@ public class CinemaTest {
 
         //Assert
         Assertions.assertEquals("Allocated", result);
+    }
 
+    @Test
+    public void checkIfSeatGridArrayInitializedtoEmptyTest(){
+        //Arrange
+        Cinema cinemaApp = new Cinema(3,5);
+        String[][] actualStringArr = new String[3][5];
+        String[][] expectedStringArr = {{"0", "0", "0", "0", "0"},
+                                        {"0", "0", "0", "0", "0"},
+                                        {"0", "0", "0", "0", "0"}
+                                        };
+        //Assert
+        Assertions.assertArrayEquals(expectedStringArr,
+                                        cinemaApp.initializeSeatsGrid(actualStringArr),
+                                "Assertion failed as the two array values didn’t match");
     }
 }
