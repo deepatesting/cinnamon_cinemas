@@ -33,7 +33,6 @@ public class Cinema {
             for(int col = 0; col < seatsGrid[row].length; col++)
                 if(seatsGrid[row][col] == EMPTY_SEAT)
                     return true;
-
         return false;
     }
 
@@ -45,16 +44,24 @@ public class Cinema {
         return seatsGrid;
     }
 
-    public String allocateSeats(String[][] seatGrid, int numSeats){
+    public String allocateSeats(String[][] seatsGrid, int numSeats){
 
         if((numSeats >= 1) && (numSeats <=3)) {
             seatsGrid = initializeSeatsGrid(seatsGrid);
-            return "Allocated";
-        }else
+            if(hasOpenSeats(seatsGrid)) {
+                while(numSeats > 0){
+                    for(int row = 0 ; row < seatsGrid.length; row++)
+                        for(int col = 0; col < seatsGrid[row].length; col++)
+                            if(seatsGrid[row][col] == "0")
+                                seatsGrid[row][col] = "X";
+                    numSeats--;
+                }
+                return "Allocated";
+            }
+            else
+                return "Not enough space";
+        } else
             return " ";
     }
 
-    public String purchaseCinemaTickets(){
-        return " ";
-    }
 }

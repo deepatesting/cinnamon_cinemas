@@ -74,8 +74,34 @@ public class CinemaTest {
         //Arrange
         String[][] inputStrArr = {{"X", "X", "X", "X", "X"},
                                         {"X", "X", "X", "X", "X"},
-                                        {"X", "X", "X","X", "X",}
+                                        {"X", "X", "X","0", "0",}
                                         };
         Assertions.assertTrue(cinemaApp.hasOpenSeats(inputStrArr));
+    }
+
+    @DisplayName("Check if success after allocation for user input in range")
+    @Test
+    public void checkAllocateSeatTestInput3(){
+        //Arrange
+        int userInput = 3;
+
+        //Act
+        result = cinemaApp.allocateSeats(actualStringArr, userInput);
+
+        //Assert
+        Assertions.assertEquals("Allocated", result);
+    }
+
+    @DisplayName("Check for return empty if user input value not within range")
+    @Test
+    public void checkAllocateSeatTestInput4Fail(){
+        //Arrange
+        int userInput = 4;
+
+        //Act
+        result = cinemaApp.allocateSeats(actualStringArr, userInput);
+
+        //Assert
+        Assertions.assertEquals(" ", result);
     }
 }
