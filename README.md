@@ -25,6 +25,7 @@ Read [here](/docs/Cinnamon_Cinema_Task_Instructions.pdf) about the instructions 
 * Created Cinema class and CinemaTest class. Started writing test case with empty string return value check.
 * Further test case written to check for valid number of rows, columns and user input.
 * Included more methods in Cinema class to achieve seat allocation as per user request.
+* Implemented Console Main class to receive user input via console.
 
 ### TDD
 
