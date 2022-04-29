@@ -8,7 +8,7 @@ public class CinemaTest {
     @Test
     public void checkFirstTest(){
         //Arrange
-        Cinema cinemaApp = new Cinema();
+        Cinema cinemaApp = new Cinema(3,5);
 
         //Act
         String expectedResult = cinemaApp.allocateSeats();
