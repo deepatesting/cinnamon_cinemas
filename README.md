@@ -20,6 +20,7 @@ Read [here](/docs/Cinnamon_Cinema_Task_Instructions.pdf) about the instructions 
 
 ### My Solution
 
+* Sketched out a very simple UML Diagram. Refer final design [here](/docs/UML_Cinnamon_Cinemas.png). 
 * I have applied Test-Driven Development (TDD) to test-drive my solution. 
 * Created Cinema class and CinemaTest class. Started writing test case with empty string return value check.
 * Further test case written to check for valid number of rows, columns and user input.
@@ -31,5 +32,5 @@ cd to the project root folder in the command line.
 
 Run ``mvn test``
 
-Find my Test Results [Here](https://htmlpreview.github.io/?https://github.com/deepatesting/cinnamon_cinemas/blob/master/docs/Test_Results-CinemaTest.html).
+Find my Test Results [here](https://htmlpreview.github.io/?https://github.com/deepatesting/cinnamon_cinemas/blob/master/docs/Test_Results-CinemaTest.html).
 
