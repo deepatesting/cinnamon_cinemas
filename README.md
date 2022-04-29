@@ -31,5 +31,5 @@ cd to the project root folder in the command line.
 
 Run ``mvn test``
 
-Find my Test Results [Here](https://htmlpreview.github.io/?https://github.com/deepatesting/Test_Results-CinemaTest.html).
+Find my Test Results [Here](https://htmlpreview.github.io/?https://github.com/deepatesting/cinnamon_cinemas/blob/master/docs/Test_Results-CinemaTest.html).
 
