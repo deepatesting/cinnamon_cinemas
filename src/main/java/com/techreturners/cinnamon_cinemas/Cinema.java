@@ -14,7 +14,19 @@ public class Cinema {
         this.seatsGrid = new String[rows][columns];
     }
 
+    public int getColumns() {
+        return columns;
+    }
+
+    public int getRows() {
+        return rows;
+    }
+
+    public String[][] getSeatsGrid() {
+        return seatsGrid;
+    }
+
     public String allocateSeats(){
-        return "";
+        return " ";
     }
 }
